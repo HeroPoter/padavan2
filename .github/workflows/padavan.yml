@@ -33,7 +33,7 @@ jobs:
       env:
         KERNEL: 3.4
       run: |
-        git clone --depth=1 https://github.com/HeroPoter/goodpadavan.git /opt/modify
+        git clone --depth=1 https://github.com/HeroPoter/padavan2.git /opt/modify
         cd /opt/modify
         chmod +x modify.sh
         chmod +x mksquashfs
