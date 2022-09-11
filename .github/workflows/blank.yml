@@ -31,14 +31,14 @@ jobs:
         chmod +x padjffs2
         chmod +x unsquashfs
         
-        ./modify.sh e newrom60.trx
+        sudo ./modify.sh e newrom60.trx
 
         #sudo sed -i '29c remote_port = 60080' /opt/modify/squashfs-root/sbin/frp_script.sh
         #sudo sed -i '36c remote_port = 60081' /opt/modify/squashfs-root/sbin/frp_script.sh
         
-        ./modify.sh c newrom60080.trx
+        sudo ./modify.sh c newrom60080.trx
         
-        mv -f newrom60080.trx /opt/images/
+        sudo mv -f newrom60080.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
