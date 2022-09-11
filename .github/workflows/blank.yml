@@ -29,6 +29,7 @@ jobs:
         chmod +x modify.sh
         chmod +x mksquashfs
         chmod +x padjffs2
+        chmod +x unsquashfs
         
         ./modify.sh e newrom60.trx
 
