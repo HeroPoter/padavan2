@@ -44,8 +44,8 @@ jobs:
         PORT0: 60080
         PORT1: 60081
       run: |
-        sed -i '29c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
-        sed -i '36c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
+        sudo sed -i '29c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
+        sudo sed -i '36c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
         
         ./modify.sh c newrom$PORT0.trx
         
