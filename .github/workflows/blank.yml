@@ -30,19 +30,19 @@ jobs:
         chmod +x mksquashfs
         chmod +x padjffs2
         
-        ./modify.sh e newrom60.trx
+        ./modify.sh e newrom70.trx
 
     - name: Build Firmware
       env:
         PORT0: 60080
         PORT1: 60081
       run: |
-        sed -i ‘29c remote_port = $PORT0’ /opt/modify/squashfs-root/sbin/frp_script.sh
-        sed -i ‘36c remote_port = $PORT1’ /opt/modify/squashfs-root/sbin/frp_script.sh
+        sed -i ‘29c remote_port = 60080’ /opt/modify/squashfs-root/sbin/frp_script.sh
+        sed -i ‘36c remote_port = 60081’ /opt/modify/squashfs-root/sbin/frp_script.sh
         
-        ./modify.sh c newrom$PORT0.trx
+        ./modify.sh c newrom60080.trx
         
-        mv -f *.trx /opt/images/
+        mv -f newrom60080.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
