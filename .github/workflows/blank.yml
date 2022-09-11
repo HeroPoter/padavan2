@@ -32,6 +32,12 @@ jobs:
         chmod +x unsquashfs
         
         sudo ./modify.sh e newrom60.trx
+        
+    - name: Build Firmware
+      env:
+        TNAME: MI-R3G
+        KERNEL: 3.4
+      run: |
 
         #sudo sed -i '29c remote_port = 60080' /opt/modify/squashfs-root/sbin/frp_script.sh
         #sudo sed -i '36c remote_port = 60081' /opt/modify/squashfs-root/sbin/frp_script.sh
