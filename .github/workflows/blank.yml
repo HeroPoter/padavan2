@@ -30,7 +30,7 @@ jobs:
         chmod +x mksquashfs
         chmod +x padjffs2
         
-        ./modify.sh e newrom70.trx
+        ./modify.sh e newrom60.trx
 
     - name: Build Firmware
       env:
