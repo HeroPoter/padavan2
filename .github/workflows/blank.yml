@@ -38,12 +38,12 @@ jobs:
         PORT0: 60080
         PORT1: 60081
       run: |
-        sudo sed -i '29c remote_port = 60080' /opt/modify/squashfs-root/sbin/frp_script.sh
-        sudo sed -i '36c remote_port = 60081' /opt/modify/squashfs-root/sbin/frp_script.sh
+        #sudo sed -i '29c remote_port = 60080' /opt/modify/squashfs-root/sbin/frp_script.sh
+        #sudo sed -i '36c remote_port = 60081' /opt/modify/squashfs-root/sbin/frp_script.sh
         
         ./modify.sh c newrom60080.trx
         
-        sudo mv -f newrom60080.trx /opt/images/
+        mv -f newrom60080.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
