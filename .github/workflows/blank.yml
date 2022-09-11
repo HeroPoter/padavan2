@@ -1,0 +1,54 @@
+#修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
+name: Good Padavan
+
+on: 
+  release:
+    types: [published]
+
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
+        cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
+        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
+    - name: Clone source code
+      env:
+        KERNEL: 3.4
+      run: |
+        git clone --depth=1 https://github.com/HeroPoter/goodpadavan.git /opt/modify
+        cd /opt/modify
+        chmod +x modify.sh
+        chmod +x mksquashfs
+        chmod +x padjffs2
+        
+        ./modify.sh e newrom70.trx
+
+    - name: Build Firmware
+      env:
+        PORT0: 60080
+        PORT1: 60081
+      run: |
+        sed -i ‘29c remote_port = $PORT0’ /opt/modify/squashfs-root/sbin/frp_script.sh
+        sed -i ‘36c remote_port = $PORT1’ /opt/modify/squashfs-root/sbin/frp_script.sh
+        
+        ./modify.sh c newrom$PORT0.trx
+        
+        sudo mv -f *.trx /opt/images/
+    - name : Upload packages
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+        name: Padavan-packages
+        path: /opt/images
