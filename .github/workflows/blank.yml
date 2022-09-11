@@ -42,7 +42,7 @@ jobs:
         
         ./modify.sh c newrom$PORT0.trx
         
-        sudo mv -f *.trx /opt/images/
+        mv -f *.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
