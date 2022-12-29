@@ -37,8 +37,8 @@ jobs:
         chmod +x padjffs2
         chmod +x unsquashfs   
         sh modify.sh e newrom60.trx
-        sed -i '29c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
-        sed -i '36c remote_port = $PORT1' /opt/modify/squashfs-root/sbin/frp_script.sh
+        sudo sed -i '29c remote_port = $PORT0' /opt/modify/squashfs-root/sbin/frp_script.sh
+        sudo sed -i '36c remote_port = $PORT1' /opt/modify/squashfs-root/sbin/frp_script.sh
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom888.trx
         mv -f newrom888.trx /opt/modify/images/
