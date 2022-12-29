@@ -33,10 +33,10 @@ jobs:
         chmod +x mksquashfs
         chmod +x padjffs2
         chmod +x unsquashfs   
-        sudo ./modify.sh e newrom60.trx
+        ./modify.sh e newrom60.trx
         
-        sudo ./modify.sh c newrom888.trx
-        sudo mv -f newrom6*.trx /opt/images/
+        ./modify.sh c newrom888.trx
+        mv -f newrom6*.trx /opt/images/
     - name: Commit
       run: |
           git add .
