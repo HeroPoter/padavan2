@@ -34,9 +34,9 @@ jobs:
         chmod +x padjffs2
         chmod +x unsquashfs   
         sh modify.sh e newrom60.trx
-        
+        mkdir -p /opt/modify/images/
         sh modify.sh c newrom888.trx
-        mv -f newrom6*.trx /opt/images/
+        mv -f newrom888.trx /opt/modify/images/
     - name: Commit
       run: |
           git add .
