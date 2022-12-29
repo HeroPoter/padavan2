@@ -44,7 +44,6 @@ jobs:
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom888.trx
         mv -f newrom888.trx /opt/modify/images/
-        sudo mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
     - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
