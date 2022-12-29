@@ -25,9 +25,18 @@ jobs:
         persist-credentials: false 
         # otherwise, there would be errors pushing refs to the destination repository.
         fetch-depth: 0 
-    - name: Build and commit
+    - name: name: Clone source code
       run: |
-        bash ./.github/config.sh
+        git clone --depth=1 https://github.com/HeroPoter/padavan2.git /opt/modify
+        cd /opt/modify
+        chmod +x modify.sh
+        chmod +x mksquashfs
+        chmod +x padjffs2
+        chmod +x unsquashfs   
+        sudo ./modify.sh e newrom60.trx
+        
+        sudo ./modify.sh c newrom888.trx
+        sudo mv -f newrom6*.trx /opt/images/
     - name: Commit
       run: |
           git add .
