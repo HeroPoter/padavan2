@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Start
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
       with:
         # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
         persist-credentials: false 
@@ -37,6 +37,7 @@ jobs:
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom888.trx
         mv -f newrom888.trx /opt/modify/images/
+        mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
     - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
