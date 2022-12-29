@@ -37,22 +37,9 @@ jobs:
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom888.trx
         mv -f newrom888.trx /opt/modify/images/
-    - name: Commit
-      run: |
-          git add .
-          git commit -m "Action Build" 
-    - name: Push commits
-      uses: ad-m/github-push-action@master
+    - name: Upload packages
+      uses: actions/upload-artifact@master
+      if: always()
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-          force: true
-    - name: Automatic Releases
-      uses: marvinpinto/action-automatic-releases@v1.2.1
-      with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          automatic_release_tag: latest
-          title: "ReduceMIUI Latest"
-          files: |
-            ./ReduceMIUI.zip
+        name: Padavan-packages
+        path: /opt/modify/images
