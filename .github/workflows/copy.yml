@@ -43,8 +43,8 @@ jobs:
         sudo sed -i "36c remote_port = $PORT1" /opt/modify/squashfs-root/sbin/frp_script.sh
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom$PORT0.trx
-        mv -f newrom$PORT0.trx /opt/modify/images/
-        mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
+        sudo mv -f newrom$PORT0.trx /opt/modify/images/
+        sudo mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
     - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
