@@ -1,12 +1,12 @@
 #!/bin/bash
-source ~/.bashrc
-ftp -niv <<- EOF
+ftp -n -i <<!
 open
 user
+passive
 binary
 cd /test
 lcd /opt/modify
-prompt
 put newrom60002.trx
+ls
 bye
-EOF
+!
