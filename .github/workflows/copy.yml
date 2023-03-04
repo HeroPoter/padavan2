@@ -32,17 +32,12 @@ jobs:
       run: |
         git clone --depth=1 https://github.com/HeroPoter/padavan2.git /opt/modify
         cd /opt/modify
-        chmod +x modify.sh
-        chmod +x mksquashfs
-        chmod +x padjffs2
-        chmod +x unsquashfs   
-        sh modify.sh e newrom60.trx
+
         #PORT0=60000
         #PORT1=60001
-        sudo sed -i "29c remote_port = $PORT0" /opt/modify/squashfs-root/sbin/frp_script.sh
-        sudo sed -i "36c remote_port = $PORT1" /opt/modify/squashfs-root/sbin/frp_script.sh
+        
         mkdir -p /opt/modify/images/
-        sh modify.sh c newrom$PORT0.trx
+
         mv -f newrom$PORT0.trx /opt/modify/images/
         mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
     - name: Upload packages
