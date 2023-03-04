@@ -1,12 +1,12 @@
 #!/bin/bash
-ftp -n -i <<!
+source ~/.bashrc
+ftp -niv <<- EOF
 open
 user
 passive
 binary
 cd /test
-lcd /opt/modify
+lcd /opt
 put newrom60002.trx
-ls
 bye
-!
+EOF
