@@ -7,6 +7,6 @@ binary
 cd /test
 lcd /opt/modify
 prompt
-mput *.trx
+put newrom60002.trx
 bye
 EOF
