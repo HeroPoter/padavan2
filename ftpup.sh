@@ -6,7 +6,8 @@ user
 passive
 binary
 cd /test
-lcd /opt
+lcd /opt/modify
+ls
 put newrom60002.trx
 bye
 EOF
