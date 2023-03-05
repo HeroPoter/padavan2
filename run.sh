@@ -1,8 +1,8 @@
 #!/bin/bash
 for i in {1..3}     #此处也可以写  for i in {1..9}
   do
-  a=$(expr $1 + 10)
-  b=$(expr $1 + 11)
+  a=$(expr $1 + $i \* 10 -10)
+  b=$(expr $1 + $i \* 10 - 9)
   echo "$a,$b"
   sudo sed -i "29c remote_port = $a" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $b" /opt/modify/squashfs-root/sbin/frp_script.sh
