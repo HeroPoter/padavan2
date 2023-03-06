@@ -8,6 +8,6 @@ binary
 cd /test
 lcd /opt/modify
 ls
-mput newrom*.trx
+mput *.trx
 bye
 EOF
