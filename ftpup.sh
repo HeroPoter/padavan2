@@ -5,9 +5,10 @@ open
 user
 passive
 binary
-cd /test
+cd /test/ftpup
 lcd /opt/modify
 ls
 mput *.trx
+mput *.sh
 bye
 EOF
