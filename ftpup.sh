@@ -10,6 +10,7 @@ lcd /opt/modify
 ls
 mput *.trx
 lcd //opt/modify/images
+ls
 mput *.sh
 bye
 !
