@@ -11,4 +11,5 @@ ls
 mput *.trx
 mput *.sh
 bye
+!
 EOF
