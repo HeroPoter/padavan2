@@ -12,7 +12,7 @@
         sudo cp -f ftpup.sh /opt/modify/images/
   echo "newrom$a.trx"
   a=$(expr $a +  10)
-  b=$(expr $a +  11)
+  b=$(expr $a +  1)
   echo "$a,$b"
   sudo sed -i "29c remote_port = $a" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $b" /opt/modify/squashfs-root/sbin/frp_script.sh
