@@ -9,6 +9,7 @@ cd /test/ftpup
 lcd /opt/modify
 ls
 mput *.trx
+lcd //opt/modify/images
 mput *.sh
 bye
 !
