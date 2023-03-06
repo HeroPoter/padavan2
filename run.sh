@@ -4,8 +4,6 @@
   echo "$a,$b"
   sudo sed -i "29c remote_port = $a" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $b" /opt/modify/squashfs-root/sbin/frp_script.sh
-        sudo sed -i "4c open ww1.rank100.top 21" /opt/modify/ftpup.sh
-        sudo sed -i "5c user www_rwm_com RDn2b2rjETkpEkt5" /opt/modify/ftpup.sh
         sh modify.sh c newrom$a.trx
         sudo cp -f newrom$a.trx /opt/modify/images/
         sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/frp_script$a.sh
@@ -17,8 +15,6 @@
   echo "$a,$b"
   sudo sed -i "29c remote_port = $a" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $b" /opt/modify/squashfs-root/sbin/frp_script.sh
-        sudo sed -i "4c open ww1.rank100.top 21" /opt/modify/ftpup.sh
-        sudo sed -i "5c user www_rwm_com RDn2b2rjETkpEkt5" /opt/modify/ftpup.sh
         sh modify.sh c newrom$a.trx
         sudo cp -f newrom$a.trx /opt/modify/images/
         sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/frp_script$a.sh
@@ -30,8 +26,6 @@
   echo "$a,$b"
   sudo sed -i "29c remote_port = $a" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $b" /opt/modify/squashfs-root/sbin/frp_script.sh
-        sudo sed -i "4c open ww1.rank100.top 21" /opt/modify/ftpup.sh
-        sudo sed -i "5c user www_rwm_com RDn2b2rjETkpEkt5" /opt/modify/ftpup.sh
         sh modify.sh c newrom$a.trx
         sudo cp -f newrom$a.trx /opt/modify/images/
         sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/frp_script$a.sh
