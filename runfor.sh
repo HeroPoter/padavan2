@@ -1,6 +1,6 @@
 #!/bin/bash
 i=1
-while ((i <= 3))
+while ((i < 4))
 do
 a=$(expr $1 + $i * 10 - 10)
 b=$(expr $1 + $i * 10 - 9)
