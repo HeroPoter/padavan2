@@ -8,7 +8,7 @@
         sudo sed -i "5c user www_rwm_com RDn2b2rjETkpEkt5" /opt/modify/ftpup.sh
         sh modify.sh c newrom$a.trx
         sudo cp -f newrom$a.trx /opt/modify/images/
-        sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/frp_script$a.sh
         sudo cp -f ftpup.sh /opt/modify/images/
   echo "newrom$a.trx"
   a=$(expr $a +  10)
@@ -20,6 +20,6 @@
         sudo sed -i "5c user www_rwm_com RDn2b2rjETkpEkt5" /opt/modify/ftpup.sh
         sh modify.sh c newrom$a.trx
         sudo cp -f newrom$a.trx /opt/modify/images/
-        sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/frp_script$a.sh
         sudo cp -f ftpup.sh /opt/modify/images/
   echo "newrom$a.trx"
