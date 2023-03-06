@@ -6,12 +6,9 @@ user
 passive
 binary
 cd /test/ftpup
-lcd /opt/modify
+lcd /opt/modify/images
 ls
-mput *.trx
-lcd //opt/modify/images
-ls
-mput *.sh
+mput *.*
 bye
 !
 EOF
