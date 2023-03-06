@@ -8,6 +8,6 @@ binary
 cd /test
 lcd /opt/modify
 ls
-put newrom60002.trx
+mput newrom*.trx
 bye
 EOF
