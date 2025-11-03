@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: NewRom
+name: NewRom_old
 
 # Controls when the workflow will run
 on: 
@@ -50,4 +50,5 @@ jobs:
       if: always()
       with:
         name: Padavan-packages
+
         path: /opt/modify/images
