@@ -43,6 +43,7 @@ jobs:
         sudo sed -i "36c remote_port = $PORT1" /opt/modify/squashfs-root/sbin/frp_script.sh
         mkdir -p /opt/modify/images/
         sh modify.sh c newrom$PORT0.trx
+        sudo mv -f padavan.html /opt/modify/squashfs-root/www/padavan.html
         sudo mv -f newrom$PORT0.trx /opt/modify/images/
         sudo mv -f /opt/modify/squashfs-root/www/padavan.html /opt/modify/images/
         sudo mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
@@ -52,6 +53,7 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/modify/images
+
 
 
 
