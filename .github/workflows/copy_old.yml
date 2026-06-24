@@ -27,8 +27,8 @@ jobs:
         fetch-depth: 0 
     - name: Clone source code
       env:
-        PORT0: 60010   #1200端口
-        PORT1: 60011   #22端口
+        PORT0: 60020   #1200端口
+        PORT1: 60021   #22端口
       run: |
         git clone --depth=1 https://github.com/HeroPoter/padavan2.git /opt/modify
         cd /opt/modify
