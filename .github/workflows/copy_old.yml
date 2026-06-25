@@ -42,13 +42,13 @@ jobs:
         sudo sed -i "29c remote_port = $PORT0" /opt/modify/squashfs-root/sbin/frp_script.sh
         sudo sed -i "36c remote_port = $PORT1" /opt/modify/squashfs-root/sbin/frp_script.sh
         mkdir -p /opt/modify/images/
-        sudo mv -f padavan.html /opt/modify/squashfs-root/www/padavan.html        
+        sudo cp -f padavan.html /opt/modify/squashfs-root/www/padavan.html        
         sh modify.sh c newrom$PORT0.trx
 
-        sudo mv -f newrom$PORT0.trx /opt/modify/images/
-        #sudo mv -f /opt/modify/squashfs-root/www/padavan.html /opt/modify/images/
-        #sudo mv -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
-        sudo cp -f /opt/modify/squashfs-root/etc/storage/*.* /opt/modify/images/
+        sudo cp -f newrom$PORT0.trx /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/www/padavan.html /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/etc/storage/*.sh /opt/modify/images/
     - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
