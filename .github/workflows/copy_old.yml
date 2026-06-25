@@ -46,8 +46,10 @@ jobs:
         sh modify.sh c newrom$PORT0.trx
 
         sudo cp -f newrom$PORT0.trx /opt/modify/images/
-        sudo cp -f /opt/modify/squashfs-root/www/padavan.html /opt/modify/images/
+        #sudo cp -f /opt/modify/squashfs-root/www/padavan.html /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/www/*.* /opt/modify/images/
         sudo cp -f /opt/modify/squashfs-root/sbin/frp_script.sh /opt/modify/images/
+        sudo cp -f /opt/modify/squashfs-root/sbin/mtd_storage.sh /opt/modify/images/
         #sudo cp -f /opt/modify/squashfs-root/etc/storage/*.sh /opt/modify/images/
     - name: Upload packages
       uses: actions/upload-artifact@master
